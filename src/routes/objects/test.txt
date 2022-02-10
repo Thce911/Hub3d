@@ -1,0 +1,28 @@
+<Text textSize="display1" m="1rem">
+                  Hub3d
+                </Text>
+                
+                <Input
+                  w="80vh"
+                  m="1rem"
+                  placeholder="Search"
+                  suffix={
+                    <Button
+                      pos="absolute"
+                      onClick={() => console.log("clicked")}
+                      bg="info700"
+                      hoverBg="info800"
+                      w="3rem"
+                      top="0"
+                      right="0"
+                      rounded={{ r: "md" }}
+                    >
+                      <Icon
+                        name="Search"
+                        size="20px"
+                        color="white"
+                        cursor="pointer"
+                      />
+                    </Button>
+                  }
+                />
