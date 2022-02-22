@@ -13,7 +13,7 @@ import './css/index.css';
 import App from './App';
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
-import ObjectsView from '../src/routes/objects/objectsview';
+import ObjectsView from './routes/assets/objectsview';
 
 //Firebase
 import {FirebaseAppProvider} from 'reactfire';
@@ -35,7 +35,7 @@ render(
           <Route path="/" element={<App />} />
           <Route path="home" element={<Home />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="objectsview" element={<ObjectsView />} />
+          <Route path="library" element={<ObjectsView />} />
         </Routes>
       </StyletronProvider>
     </FirebaseAppProvider>
