@@ -1,23 +1,21 @@
 /* eslint-disable no-unused-expressions */
 import { Component } from "react";
 import * as THREE from "three";
-import {Div, Row, Col} from 'atomize';
+import {Div, Row, Col, Tag, Text} from 'atomize';
+
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
-
 
 let scene, camera, renderer, controls, mixer, action;
 let toggle = false;
 const clock = new THREE.Clock();
-
-
 
 class AssetViewer extends Component {
     constructor(props) {
         super(props);
         this.animate = this.animate.bind(this);
       }
+    
   init() {
     //creating scene
     scene = new THREE.Scene();
@@ -25,27 +23,27 @@ class AssetViewer extends Component {
 
     //add camera
     camera = new THREE.PerspectiveCamera(
-      100,
+      45,
       window.innerWidth / window.innerHeight,
-      2,
+      1,
       2000
     );
-
+    //Light configuration
     const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444);
-    hemiLight.position.set(0, 1, 0);
+    hemiLight.position.set(1, 2, 1);
     scene.add(hemiLight);
 
     const dirLight = new THREE.DirectionalLight(0xffffff);
-    dirLight.position.set(0, 1, 0);
+    dirLight.position.set(1, 2, 1);
     scene.add(dirLight);
 
     // grid
-    const gridHelper = new THREE.GridHelper(30, 30, 0x303030, 0x303030);
+    const gridHelper = new THREE.GridHelper(20, 20, 0x303030, 0x303030);
     scene.add(gridHelper);
 
     //renderer
     renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(900, 500);
     document.body.appendChild(renderer.domElement);
 
 
@@ -81,7 +79,9 @@ class AssetViewer extends Component {
     
       }
     );
-    camera.position.set(10, 10, 1);
+
+    //Camera function setup
+    camera.position.set(10, 5, 5);
     
     //Setup OrbitControls
     controls = new OrbitControls(camera, renderer.domElement);
@@ -117,9 +117,41 @@ class AssetViewer extends Component {
   render() {
     return (
         <>
+        <Row >
+            <Col>
+                <Div maxW="100%" maxH="600px" id="Render">
+                </Div> 
+            </Col>
+        </Row>
         <Row>
-            <Col size="2" >
-                 <Div id="Render" w="350px" h="200px"></Div> 
+            <Col>
+              <Div m={{t:"1rem", b:"2rem"}}>
+                <Text textSize="tiny" > Assets/CienciasSociales/</Text>
+                <Tag m={{t:"1rem", r: "1rem"}}>Ciencia</Tag>
+                <Tag m={{t:"1rem", r: "1rem"}}>Partículas</Tag>
+                <Tag m={{t:"1rem", r: "1rem"}}>Modelos 3D</Tag>
+              </Div>
+              <hr></hr>
+              <Div>
+                <Text textSize="heading" >Información del objeto</Text>
+                <Tag m={{t:"1rem", r: "1rem", b:"1rem"}}>Sin animación</Tag>
+                <Row m={{l:{xs:"rem"}}}>
+                  <Col size="3" bg="gray200">
+                    <Text>Nombre</Text>
+                    <Text>Author</Text>
+                    <Text>Tipo</Text>
+                    <Text>Solicitante</Text>
+                  </Col>
+                  <Col size="9">
+                    <Text>p008_Dioxido_de_Carbono</Text>
+                    <Text>Diego</Text>
+                    <Text>AssetBundle</Text>
+                    <Text>Profesor X</Text>
+                  </Col>  
+                </Row>
+                <hr></hr>
+              </Div>
+              
             </Col>
         </Row>
          

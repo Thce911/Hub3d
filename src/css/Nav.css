@@ -1,0 +1,24 @@
+.smenu{
+    display: none;
+}
+
+
+@media (max-width: 600px){
+    .smenu{
+        display: block;
+        padding-right: 20px;
+    }
+   
+}
+
+@media (min-width:  1000px){
+    .smenu{
+        display: block;
+        padding-right: 20px;
+    }
+
+    .menu-btn{
+        display: none;
+    }
+  
+}

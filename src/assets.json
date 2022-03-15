@@ -1,0 +1,32 @@
+[
+    {
+    "id": "0001",
+    "name": "Asset1",
+    "author": "Jhon doe"
+    },
+    {
+    "id": "0002",
+    "name": "Asset2",
+    "author": "William smith"
+    },
+    {
+    "id": "0003",
+    "name": "Asset3",
+    "author": "Peter Parker"
+    },
+    {
+    "id": "0004",
+    "name": "Asset4",
+    "author": "Pink floyd"
+    },
+    {
+    "id": "0005",
+    "name": "Asset5",
+    "author": "Jhon Dilinger"
+    },
+    {
+        "id": "0006",
+        "name": "Asset6",
+        "author": "Jhon Van damm"
+    }
+]

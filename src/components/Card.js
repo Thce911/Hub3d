@@ -1,9 +1,13 @@
 import {Component} from 'react';
 import {Div, Text, Button, Icon} from 'atomize';
+import SideView from './SideViewer';
+
 
 class Card extends Component{
+  
     render(){
-        const {name = '', author = 'jhon Doe', img="https://firebasestorage.googleapis.com/v0/b/art3d-e7c95.appspot.com/o/img%2F-MZs05a6u3UoaoVqRpzS.jpg?alt=media&token=35604331-c127-4986-9796-0cd0213ee9fa" } = this.props;
+        
+        const {name = '', author = '', img="https://firebasestorage.googleapis.com/v0/b/art3d-e7c95.appspot.com/o/img%2F-MZs05a6u3UoaoVqRpzS.jpg?alt=media&token=35604331-c127-4986-9796-0cd0213ee9fa" } = this.props;
         return(
             <Div d="flex" flexDir="row">
                 <Div
@@ -23,19 +27,12 @@ class Card extends Component{
                       hoverBg="danger400"
                       rounded="lg"
                     >
-                      <Icon name="Heart" size="20px" color="danger700" />
+                      <Icon name='Heart' size="20px" color="danger700" id="fav"/>
                     </Button>
 
-                    <Button
-                      h="2rem"
-                      w="2rem"
-                      bg="transparent"
-                      hoverBg="info400"
-                      rounded="lg"
-                    >
-                      <Icon name="Download" size="20px" color="info500" />
-                    </Button>
+                    <SideView />
                   </Div>
+
                   <Div m={{ l: "1rem", t: "3rem" }}>
                     <Text
                       textSize="subheader"
@@ -51,6 +48,8 @@ class Card extends Component{
                     >
                       {author}
                     </Text>
+                      
+                    
                   </Div>
                 </Div>
               

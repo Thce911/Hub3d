@@ -13,11 +13,11 @@ import './css/index.css';
 import App from './App';
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
-import ObjectsView from './routes/assets/objectsview';
+import library from './routes/assets/library';
 
 //Firebase
-import {FirebaseAppProvider} from 'reactfire';
-import firebaseConfig from './firebase-config';
+
+import Library from './routes/assets/library';
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
 
@@ -28,17 +28,15 @@ const rootElement = document.getElementById("root");
 
 render(
   <BrowserRouter>
-    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
       <StyletronProvider value={engine} debug={debug} debugAfterHydration>
         <StyleReset></StyleReset>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="home" element={<Home />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="library" element={<ObjectsView />} />
+          <Route path="library" element={<Library />} />
         </Routes>
       </StyletronProvider>
-    </FirebaseAppProvider>
   </BrowserRouter>,
   rootElement
 );
