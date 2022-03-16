@@ -6,20 +6,20 @@ import SideView from './SideViewer';
 class Card extends Component{
   
     render(){
-        
         const {name = '', author = '', img="https://firebasestorage.googleapis.com/v0/b/art3d-e7c95.appspot.com/o/img%2F-MZs05a6u3UoaoVqRpzS.jpg?alt=media&token=35604331-c127-4986-9796-0cd0213ee9fa" } = this.props;
         return(
-            <Div d="flex" flexDir="row">
+              <>
                 <Div
-                  w="200px"
-                  h="200px"
+                  w="220px"
+                  h="220px"
                   bgImg={img}
                   bgPos="center"
                   bgSize="cover"
                   rounded="lg"
-                  m={{ b: "1rem", r: "1rem" }}
-                >
-                  <Div m={{ l: "10rem", t: ".5rem" }}>
+                  m={{ b: ".5rem", r: ".5rem" }} 
+                  >
+                    
+                  <Div m={{ l: "11rem", t: ".5rem",r:"1rem" }}>
                     <Button
                       h="2rem"
                       w="2rem"
@@ -29,7 +29,6 @@ class Card extends Component{
                     >
                       <Icon name='Heart' size="20px" color="danger700" id="fav"/>
                     </Button>
-
                     <SideView />
                   </Div>
 
@@ -48,12 +47,10 @@ class Card extends Component{
                     >
                       {author}
                     </Text>
-                      
-                    
                   </Div>
                 </Div>
               
-            </Div>
+              </>
         )
     }
 }

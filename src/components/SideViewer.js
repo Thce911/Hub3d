@@ -4,21 +4,27 @@ import GoogleViewer from "./GoogleViewer";
 
 const BasicSideDrawer = ({ isOpen, onClose }) => {
   return (
-    <SideDrawer isOpen={isOpen} onClose={onClose} w={{ xs: "27rem", md: "40rem" }}>
-      <Div pos={{xs:"absolute", md:"absolute", lg:"absolute"}} top={{xs:"0"}} right={{xs:"0"}} flexDir={{xs:"column"}} m={{t:{xs:"2rem"}, r:{xs:"2rem"}}}>
-                <Button
-                  h="2.5rem"
-                  w="2.5rem"
-                  bg="danger300"
-                  hoverBg="danger400"
-                  rounded="lg"
-                  m={{ r: "1rem" }}
-                  onClick={onClose}
-                >
-                  <Icon name="Cross" size="20px" color="danger700" />
-                </Button>
-          </Div>
-    <GoogleViewer />
+    <SideDrawer isOpen={isOpen} onClose={onClose} w={{ xs: "24rem", md: "40rem" }} d="flex-wrap">
+      <Div d="flex" > 
+        <Button
+        classname="close-btn"
+        h="2.5rem"
+        w="2.5rem"
+        bg="danger300"
+        hoverBg="danger400"
+        rounded="md"
+        pos="absolute"
+        right="0"
+        m={{ r: "2rem" }}
+        onClick={onClose}
+      >
+        <Icon name="Cross" size="20px" color="danger700" />
+      </Button>
+      
+      </Div>
+      <Div pos={{xs:"absolute", md:"absolute", lg:"relative"}} top={{xs:"0"}} right={{xs:"0"}} flexDir={{xs:"column"}} m={{t:{xs:"2rem"}, r:{xs:"2rem"}}} >
+        <GoogleViewer />
+      </Div>
     </SideDrawer>
   );
 };

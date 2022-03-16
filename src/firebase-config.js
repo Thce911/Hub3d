@@ -1,9 +1,7 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { initializeApp} from "firebase/app";
 import { useState } from "react";
-
-
+import { getDatabase } from "firebase/database";
+import  {getStorage, ref, getDownloadURL} from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBoIQggqcw1_RWbefqenxqRT5gXr4-8gNU",
@@ -18,23 +16,13 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const df = getFirestore(app);
+export const db = getDatabase(app);
 
-export const db = getDatabase();
+export const dbs = getStorage(app);
 
-export function database(){
-  const [setData] = useState;
-  var starCountRef = ref(db, 'assets');
-
-  onValue(starCountRef, (snapshot) => {
-    const data = snapshot.val();
-    const allData = [];
-    
-    for (let id in data){
-      allData.push(data[id]);
-    }
-    setData(allData);
+export async function getImageUrl(id, ext){
+   return getDownloadURL(ref(dbs, 'img/' + id + '.' + ext )).then(url => {
+    return url;
   });
-  
-}
 
+}

@@ -1,4 +1,19 @@
 model-viewer {
     width: 100%;
-    height: 700px;
+    height: 800px;
+    z-index: 0;
+}
+
+.expand-screen{
+    width: 800px;
+}
+
+.close-btn{
+    z-index: 2;
+}
+
+@media(max-width: 600px){
+    model-viewer{
+        height: 300px;
+    }
 }
