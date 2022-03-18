@@ -1,5 +1,4 @@
 import { initializeApp} from "firebase/app";
-import { useState } from "react";
 import { getDatabase } from "firebase/database";
 import  {getStorage, ref, getDownloadURL} from "firebase/storage";
 
@@ -20,9 +19,11 @@ export const db = getDatabase(app);
 
 export const dbs = getStorage(app);
 
-export async function getImageUrl(id, ext){
-   return getDownloadURL(ref(dbs, 'img/' + id + '.' + ext )).then(url => {
-    return url;
-  });
+export function getImageUrl(id, ext){
+  return new Promise(async(resolve) => {
+    const promise = await getDownloadURL(ref(dbs, 'img/' + id + '.' + ext)).then(url => {
+      resolve(url);
+    });
+  })
 
 }

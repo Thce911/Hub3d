@@ -4,49 +4,46 @@ import Card from "../../components/Card";
 import Nav from "../../components/Navbar";
 import Sidenav from "../../components/Sidenav";
 import Footer from "../../components/Footer";
-import { db, getImageUrl} from "../../firebase-config";
+import { db, getImageUrl } from "../../firebase-config";
 import { ref, onValue } from "firebase/database";
-import { mapSeries } from "bluebird"
+import { mapSeries } from "bluebird";
 
-
-class  Library extends Component{
-  contructor(props){
+class Library extends Component {
+  contructor(props) {
     this.state = {
-      assets: [],
-      images: []
-    }
-
+      newState: {},
+    };
   }
 
-  componentWillMount(){
+  UNSAFE_componentWillMount() {
     onValue(ref(db, "/assets"), (snapshot) => {
-      let newState = {assets: [], images: []};
+      let newState = { assets: [], images: [] };
       this.setState(newState);
+
       const data = snapshot.val();
+
       if (data !== null) {
         let newData = Object.entries(data);
-        //console.log(newData);
-        mapSeries(newData, async(asset) => {
+        mapSeries(newData, async (asset) => {
           console.log(asset);
-            const image = await getImageUrl(asset[0], asset[1].imgext);
-            newState.assets.push(asset);
-            newState.images.push(image);
-            return;
+          //console.log(asset + "<- Assets");
+          const image = await getImageUrl(asset[0], asset[1].imgext);
+          newState.assets.push(asset);
+          newState.images.push(image);
+          return;
         }).then(() => {
           this.setState(newState);
+          console.log(this.state);
+          console.log('algo');
         });
-
-        console.log(this.newState + "state impreso");
-
-        //Object.values(data).map((assets) => { 
-        //  setAssets((oldArray) => [...oldArray, resource]);
-        //});
+          //Object.values(data).map((assets) => {
+          //  setAssets((oldArray) => [...oldArray, resource]);
+          //});
       }
     });
-
   }
- 
-  render(){
+
+  render() {
     return (
       <>
         <Nav />
@@ -65,15 +62,15 @@ class  Library extends Component{
               justify={{ xs: "center", md: "flex-start", lg: "flex-start" }}
               d={{ xs: "flex", md: "flex", lg: "flex" }}
             >
-              
-              { this.state.assets.lenght > 0 ? (
-                this.state.assets.map((asset, index) => (
-                    //console.log(asset),
-                    <Card key={index} name={asset[1].name} author={asset[1].createdby} img={this.state.images[index]}/>
-                  )
-                )) : null
-              }
-              
+              {this.state.assets.map((asset, index) => (
+                  console.log(this.assets + "<- Assets"),
+                    <Card
+                      key={index}
+                      name={asset[1].name}
+                      author={asset[1].createdby}
+                      img={this.state.images[index]}
+                    />
+                  ))}
             </Row>
           </Col>
         </Row>
