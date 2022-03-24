@@ -3,16 +3,12 @@ import {Div, Text, Button, Icon} from 'atomize';
 import SideView from './SideViewer';
 
 
-class Card extends Component{
-  
-    render(){
-        const {name = '', author = '', img="https://firebasestorage.googleapis.com/v0/b/art3d-e7c95.appspot.com/o/img%2F-MZs05a6u3UoaoVqRpzS.jpg?alt=media&token=35604331-c127-4986-9796-0cd0213ee9fa" } = this.props;
-        return(
+const Card = (props) => (
               <>
                 <Div
                   w="220px"
                   h="220px"
-                  bgImg={img}
+                  bgImg={props.img}
                   bgPos="center"
                   bgSize="cover"
                   rounded="lg"
@@ -38,21 +34,19 @@ class Card extends Component{
                       m={{ l: "1rem", r: "1rem" }}
                       textColor="white"
                     >
-                      {name}
+                      {props.name}
                     </Text>
                     <Text
                       textSize="body"
                       m={{ l: "1rem", r: "1rem" }}
                       textColor="gray500"
                     >
-                      {author}
+                      {props.author}
                     </Text>
                   </Div>
                 </Div>
               
               </>
         )
-    }
-}
 
 export default Card;

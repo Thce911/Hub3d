@@ -1,28 +1,75 @@
-import './css/App.css';
-import {Div, Text, Row, Col, Container} from 'atomize';
+import "./css/App.css";
+import { Div, Text, Row, Col, Container } from "atomize";
+import "../src/css/App.css";
 
-import Nav from './components/Navbar';
-import Footer from './components/Footer';
-
+import Nav from "./components/Navbar";
+import Footer from "./components/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper";
+import "./css/Swiper.css";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import { useState } from "react";
 
 function App() {
-  
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <>
       <Nav />
         <Row>
-          <Div d="flex" w="100%">
-              <Div d="flex" bg="info200" align="center" flexDir="column" w="100%" h="400px" > 
-              <Text textSize="display1" m={{t:"16rem"}} tag="h2">Bienvenido a MIRVHUB</Text>
-              <Text> Un espacio para estudiantes, profesores y colaboradores del Tec de Monterrey</Text>
-              </Div>
+          <Div w="100%" h="550px">
+            <Swiper
+              style={{
+                "--swiper-navigation-color": "#fff",
+                "--swiper-pagination-color": "#fff",
+              }}
+              spaceBetween={10}
+              navigation={true}
+              thumbs={{ swiper: thumbsSwiper }}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className="mySwiper2"
+            >
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </SwiperSlide>
+            </Swiper>
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              spaceBetween={10}
+              slidesPerView={4}
+              freeMode={true}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </SwiperSlide>
+             
+            </Swiper>
           </Div>
         </Row>
-        <Row>
-          <Col size="4" bg="info100" textAlign="center" h="300px" align="center"> <Text>Diseño y Modelación 3D</Text></Col>
-          <Col size="4" bg="info200" textAlign="center"> <Text>Realidad Virtual </Text></Col>
-          <Col size="4" bg="info300" textAlign="center"> <Text>Realidad Aumentada</Text></Col>
-        </Row>
+        
       <Footer />
     </>
   );

@@ -5,5 +5,11 @@
 }
 
 
+.gradbg{
+  background: rgb(255,0,52);
+  background: linear-gradient(22deg, rgba(255,0,52,0.07886904761904767) 0%, rgba(63,94,251,0.09007352941176472) 100%);
+
+}
+
 
 

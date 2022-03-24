@@ -18,6 +18,9 @@ import { Client as Styletron } from "styletron-engine-atomic";
 //Firebase
 
 import Library from './routes/views/library';
+import Documentation from './routes/views/documentation';
+import Team from './routes/views/team';
+import About from './routes/views/about';
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
 
@@ -35,6 +38,9 @@ render(
           <Route path="home" element={<Home />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="library" element={<Library />} />
+          <Route path="Documentation" element={<Documentation />} />
+          <Route path="About" element={<About />} />
+          <Route path="Team" element={<Team />} />
         </Routes>
       </StyletronProvider>
   </BrowserRouter>,

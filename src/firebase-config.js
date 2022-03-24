@@ -1,6 +1,6 @@
 import { initializeApp} from "firebase/app";
 import { getDatabase } from "firebase/database";
-import  {getStorage, ref, getDownloadURL} from "firebase/storage";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBoIQggqcw1_RWbefqenxqRT5gXr4-8gNU",
@@ -13,17 +13,8 @@ const firebaseConfig = {
   measurementId: "G-M6TTYK0CE9"
 }
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
 export const db = getDatabase(app);
 
 export const dbs = getStorage(app);
-
-export function getImageUrl(id, ext){
-  return new Promise(async(resolve) => {
-    const promise = await getDownloadURL(ref(dbs, 'img/' + id + '.' + ext)).then(url => {
-      resolve(url);
-    });
-  })
-
-}

@@ -7,7 +7,7 @@ import  "../css/Tools.css";
 const DownOp = (
     <Div>
         {[ "Descargar Glb", "Descargar USDZ", "Descargar Fbx"].map((name, index)=>(
-            <Anchor d="block" p={{x:"1rem", y:"0.25rem"}}>
+            <Anchor d="block" p={{x:"1rem", y:"0.25rem"}} key={index}>
                 {name}
             </Anchor>
         ))}
@@ -35,7 +35,7 @@ class GoogleViewer extends Component {
             
              <Row >
                 <Col m={{xs:{l:"3rem"}}}>
-                    <model-viewer ar ar-scale="fixed" camera-controls auto-rotate alt="modelos 3D" id="reveal" loading="eager"  src="./models/coca.glb"  ios-src="./models/MBA.usdz" />
+                    <model-viewer ar ar-scale="fixed" camera-controls auto-rotate alt="modelos 3D" id="reveal" loading="eager"  src=""  ios-src="./models/MBA.usdz" />
                 </Col>
             </Row>
             <Row textAlign={{xs:"center", md:"left", lg:"left"}} justify={{xs:"center", md:"left", lg:"left"}} >

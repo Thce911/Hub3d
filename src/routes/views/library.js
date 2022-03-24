@@ -1,49 +1,20 @@
-import { useEffect, useState, Component } from "react";
+import { Component, useEffect } from "react";
 import { Col, Row, Text } from "atomize";
-import Card from "../../components/Card";
 import Nav from "../../components/Navbar";
 import Sidenav from "../../components/Sidenav";
 import Footer from "../../components/Footer";
-import { db, getImageUrl } from "../../firebase-config";
-import { ref, onValue } from "firebase/database";
-import { mapSeries } from "bluebird";
+import FirebaseData from "../../components/firebase-methods";
+import  {Spiner}  from "../../components/Spiner";
 
 class Library extends Component {
   contructor(props) {
     this.state = {
-      newState: {},
+      loading: true,
     };
   }
 
-  UNSAFE_componentWillMount() {
-    onValue(ref(db, "/assets"), (snapshot) => {
-      let newState = { assets: [], images: [] };
-      this.setState(newState);
-
-      const data = snapshot.val();
-
-      if (data !== null) {
-        let newData = Object.entries(data);
-        mapSeries(newData, async (asset) => {
-          console.log(asset);
-          //console.log(asset + "<- Assets");
-          const image = await getImageUrl(asset[0], asset[1].imgext);
-          newState.assets.push(asset);
-          newState.images.push(image);
-          return;
-        }).then(() => {
-          this.setState(newState);
-          console.log(this.state);
-          console.log('algo');
-        });
-          //Object.values(data).map((assets) => {
-          //  setAssets((oldArray) => [...oldArray, resource]);
-          //});
-      }
-    });
-  }
-
   render() {
+
     return (
       <>
         <Nav />
@@ -60,17 +31,9 @@ class Library extends Component {
             </Row>
             <Row
               justify={{ xs: "center", md: "flex-start", lg: "flex-start" }}
-              d={{ xs: "flex", md: "flex", lg: "flex" }}
+              d={{ xs: "flex", md: "flex", lg: "flex" }} p={{b:"6rem"}}
             >
-              {this.state.assets.map((asset, index) => (
-                  console.log(this.assets + "<- Assets"),
-                    <Card
-                      key={index}
-                      name={asset[1].name}
-                      author={asset[1].createdby}
-                      img={this.state.images[index]}
-                    />
-                  ))}
+              <FirebaseData />
             </Row>
           </Col>
         </Row>
@@ -78,6 +41,7 @@ class Library extends Component {
       </>
     );
   }
-}
+  }
+
 
 export default Library;
