@@ -12,6 +12,10 @@ model-viewer {
     z-index: 2;
 }
 
+.footerbar{
+    z-index: 1;
+}
+
 @media(max-width: 600px){
     model-viewer{
         height: 300px;

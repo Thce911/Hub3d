@@ -21,6 +21,7 @@ import Library from './routes/views/library';
 import Documentation from './routes/views/documentation';
 import Team from './routes/views/team';
 import About from './routes/views/about';
+import Projects from './routes/views/projects';
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
 
@@ -41,6 +42,8 @@ render(
           <Route path="Documentation" element={<Documentation />} />
           <Route path="About" element={<About />} />
           <Route path="Team" element={<Team />} />
+          <Route path="Projects" element={<Projects />} />
+          
         </Routes>
       </StyletronProvider>
   </BrowserRouter>,

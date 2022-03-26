@@ -45,14 +45,14 @@
   }
   
   .mySwiper2 {
-    height: 110%;
+    height: 117%;
     width: 100%;
   }
   
   .mySwiper {
-    height: 40%;
+    height: 30%;
     box-sizing: border-box;
-    margin: 20px 0 0 0;
+    margin: 10px 0 0 0;
   }
   
   .mySwiper .swiper-slide {

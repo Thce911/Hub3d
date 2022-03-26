@@ -1,0 +1,26 @@
+.icon-invisible{
+    padding: 5px;
+    display: none;
+}
+
+.icon{
+    padding: 5px;
+
+}
+
+.yes{
+    padding: 5px;
+}
+
+.no{
+    padding: 5px;
+    color: #DCDADA;
+}
+
+
+@media(max-width: 500px) {
+    body{
+        overflow-x: hidden;
+    }
+    
+}

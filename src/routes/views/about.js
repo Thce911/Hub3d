@@ -1,5 +1,5 @@
 import react, {Component} from "react";
-import {Div, Text, Link, Tag, Icon, Row, Col, Button} from 'atomize';
+import {Div, Text, Link, Tag, Icon, Row, Col, Button, Anchor} from 'atomize';
 import Footer from "../../components/Footer";
 import Nav from "../../components/Navbar";
 import * as THREE from "three";
@@ -120,6 +120,7 @@ class About extends Component{
                             
                             <Div d={{xs:"flex-wrap", md:"flex", g:"flex"}} m={{t:{xs:"1rem", md:"2rem", lg:"1rem"}}} >
                                 <Button bg="transparent" borderColor="black" hoverShadow="4"  m={{r:".5rem", b:"1rem"}} border="3px solid" textColor="black" suffix={<Icon size="20px" name="LongRight"></Icon>}>Solicitar un recurso</Button>
+                                <Anchor href="https://mirv.tec.mx/"><Button bg="transparent" borderColor="black" hoverShadow="4"  m={{r:".5rem", b:"1rem"}} border="3px solid" textColor="black" suffix={<Icon size="20px" name="LongRight"></Icon>}>Recursos en VR</Button></Anchor>
                             </Div>
                             <Text textSize="tiny" w="90%" m={{t:"1rem"}} textAlign="justify"><i>**Ejemplo creado a partir de <a href="https://threejs.org/"> THREEJS</a> & <a href="https://www.mixamo.com/">Mixamo</a></i></Text>
                             
