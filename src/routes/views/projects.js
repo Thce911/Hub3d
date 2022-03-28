@@ -47,7 +47,7 @@ class Projects extends Component{
                        </Row>
                     </Div>
                     </Row>
-                   <Row d="flex" flexWrap="wrap" justify="center" m={{b:"8rem"}} bg="gray200">   
+                   <Row d="flex" flexWrap="wrap" justify="center" m={{b:"5rem"}} bg="gray200" p="1rem">   
                     {assets.map((asset, index)=>(
                                 <ProjectCard
                                 index={asset.id}

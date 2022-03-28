@@ -41,7 +41,7 @@ class FirebaseData extends Component {
               return this.setState(newState);;
             }).then(() => {
               console.log(newState);
-              console.log('carga completa de assets');
+              console.log('carga completa de asset');
             });
           }
         });

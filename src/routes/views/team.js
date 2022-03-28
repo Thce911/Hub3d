@@ -19,7 +19,7 @@ class Team extends Component{
                         <Text>Artistas digitales, diseñadores y programadores</Text>
                     </Div>
                    
-                    <Row justify="center">
+                    <Row justify="center" p={{b:"4rem"}}>
                         {workers.map((worker, index) =>(
 
                             <>
