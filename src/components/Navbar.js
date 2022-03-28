@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Text, Row, Col, Icon, Div, Button, Collapse, Image, } from 'atomize';
 import { Link } from 'react-router-dom';
 import "../css/Nav.css";
-import Logo from "../assets/logo.svg" 
+import Logo from "../assets/logo_og.png" 
 
 
 class Nav extends Component{
@@ -20,26 +20,26 @@ class Nav extends Component{
 
         return(
             <>
-              <Row pos="sticky" > 
+              <Row pos="sticky" h="auto" > 
                     <Col size={{xs:"12", md:"8", lg:"2"}} bg="transparent" justify="center" textAlign="center" align="center">
-                        <Link to="/"><Image src={Logo} m={{y:"2.5rem"}} maxW="50%" ></Image></Link>
+                        <Link to="/"><Image src={Logo} m={{y:"2rem"}} maxW="40%" ></Image></Link>
                     </Col>
                     <Col size={{xs:"12", md:"8", lg:"6"}} bg="transparent" align="center"> 
                         <Div d={{xs:"flex-wrap", md:"flex", lg:"flex"}} className="mobilelist">
-                                <Link to="/about">
-                                    <Text  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},}} >Acerca</Text>
+                                <Link className="navLinks"  to="/about" >
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},}} >Acerca</Text>
                                 </Link>                
-                                <Link to="/library">
-                                    <Text  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"2rem"},}} className="nav-item">Librería</Text>
+                                <Link className="navLinks"  to="/library">
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"2rem"},}} className="nav-item">Librería</Text>
                                 </Link>
-                                <Link to="/Projects">
-                                    <Text  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},}} >Proyectos</Text>
+                                <Link className="navLinks"  to="/Projects">
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},}} >Proyectos</Text>
                                     </Link>
-                                <Link to="/Team">
-                                    <Text  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},}} >Equipo</Text>
+                                <Link className="navLinks"  to="/Team">
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},}} >Equipo</Text>
                                 </Link>
-                                <Link to="/Documentation">
-                                    <Text  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},b:{xs:"4rem"}}} >Documentación</Text>
+                                <Link className="navLinks"  to="/Documentation">
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},b:{xs:"4rem"}}} >Documentación</Text>
 
                                 </Link>
 

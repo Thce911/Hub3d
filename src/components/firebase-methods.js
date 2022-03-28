@@ -5,8 +5,8 @@ import { db, dbs} from '../firebase-config';
 import { onValue}  from "firebase/database";
 import {ref as refd} from "firebase/database"; 
 import { mapSeries } from "bluebird";
-import { Container, Div } from "atomize";
-import { trackPromise } from "react-promise-tracker";
+
+import { trackPromise} from "react-promise-tracker";
 import { Spiner } from "./Spiner";
 
 function getImageUrl(id, ext){
@@ -15,15 +15,13 @@ function getImageUrl(id, ext){
         resolve(url);
       });
     })
-
   }
 
 class FirebaseData extends Component {
     contructor(props) {
         this.setState = {
           newState: {},
-        };
-        
+        };  
       }
        
     UNSAFE_componentWillMount(){
@@ -52,19 +50,15 @@ class FirebaseData extends Component {
    
     render(){
       return(
-          <>
-              
-              {this.state.assets.map((asset, index) => (
-               
-                  <Card
-
+          <>       
+            {this.state.assets.map((asset, index) => (
+                <Card
                   key={asset[1].id}
                   name={asset[1].name}
                   author={asset[1].createdby}
                   img={this.state.images[index]}
-                />
-                ))}
-
+              />
+              ))}
           </>
       )
     }

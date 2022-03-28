@@ -35,7 +35,7 @@ class GoogleViewer extends Component {
             
              <Row >
                 <Col m={{xs:{l:"3rem"}}}>
-                    <model-viewer ar ar-scale="fixed" camera-controls auto-rotate alt="modelos 3D" id="reveal" loading="eager"  src=""  ios-src="./models/MBA.usdz" />
+                    <model-viewer ar ar-scale="fixed" camera-controls auto-rotate alt="modelos 3D" id="reveal" loading="eager"  src={this.props.url}  ios-src="./models/MBA.usdz" />
                 </Col>
             </Row>
             <Row textAlign={{xs:"center", md:"left", lg:"left"}} justify={{xs:"center", md:"left", lg:"left"}} >
@@ -66,7 +66,7 @@ class GoogleViewer extends Component {
                     <Text>Solicitante</Text>
                 </Col>
                 <Col size="8">
-                    <Text>p008_Dioxido_de_Carbono</Text>
+                    <Text>{this.props.title}</Text>
                     <Text>Diego</Text>
                     <Text>AssetBundle</Text>
                     <Text>Profesor X</Text>

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Mauricio Martinez",
+    "role": "Lider funcional",
+    "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+  },
+  {
+      "name": "Daniel Gonzalez",
+      "role": "Diseñador multimedia",
+      "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    },
+    {
+        "name": "Estrella Ivonne",
+        "role": "Diseñador multimedia",
+        "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    },
+    {
+        "name": "Andrea Gonzalez",
+        "role": "Desarrollador multimedia",
+        "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    },
+    {
+        "name": "Diego Elizalde",
+        "role": "Desarrollador multimedia",
+        "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    },
+    {
+        "name": "Edgar Barrón",
+        "role": "Artista Digital",
+        "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    },
+    {
+        "name": "Edgar Garza",
+        "role": "Artista Digital",
+        "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    },
+    {
+        "name": "Adrián Ayala.",
+        "role": "Artista Digital",
+        "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    },
+    {
+        "name": "Miguel Cervantes",
+        "role": "Diseñador multimedia",
+        "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    },
+    {
+        "name": "Jonathan Ayala",
+        "role": "Desarrollador multimedia",
+        "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    },
+    {
+      "name": "Heriberto Cavazos",
+      "role": "Desarrollador multimedia",
+      "profile": "https://estaticos.muyinteresante.es/rcs/articles/2712/gen-simpson.jpg"
+    }
+]
