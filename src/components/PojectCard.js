@@ -1,17 +1,17 @@
-import {SideDrawer, Div, Text, Button, Icon, Image, Anchor, Tag, Row, Col} from 'atomize';
-import { FaMobileAlt, FaTabletAlt, FaLaptop,FaUserAlt, FaUserFriends, FaGithub, FaExternalLinkAlt, FaVrCardboard} from "react-icons/fa";
+import { Div, Text, Button, Image, Anchor, Tag, Row, Col} from 'atomize';
+import { FaMobileAlt, FaTabletAlt, FaLaptop, FaUserFriends, FaGithub, FaExternalLinkAlt} from "react-icons/fa";
 import { BsBadgeVr, BsBadgeAr, } from "react-icons/bs";
-import {GrAndroid, GrApple, GrChrome, GrFirefox, GrWindows } from "react-icons/gr";
+import {GrAndroid, GrApple, GrWindows } from "react-icons/gr";
 import "../css/documentation.css"
  
 const ProjectCard = (props) => (
 <>
     <Div
         hoverShadow="4"
-        p={"2rem"}
+        p={"1rem"}
         rounded="xl"
         bg="white"
-        m={{ t: "2rem", x:".5rem" }}
+        m={{ x:"1.8rem", y:"1.8rem" }}
         d="flex-wrap"
         w={{ xs: "100%", md: "500px", lg: "500px" }}
         h={{ xs: "12%", md: "500px", lg: "700px" }}

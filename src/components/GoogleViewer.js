@@ -58,20 +58,7 @@ class GoogleViewer extends Component {
                 </Dropdown>
               </Col>
             </Row>
-            <Row m={{l:{xs:"3rem"}}}>
-                <Col size="4" bg="gray200">
-                    <Text>Nombre</Text>
-                    <Text>Author</Text>
-                    <Text>Tipo</Text>
-                    <Text>Solicitante</Text>
-                </Col>
-                <Col size="8">
-                    <Text>{this.props.title}</Text>
-                    <Text>Diego</Text>
-                    <Text>AssetBundle</Text>
-                    <Text>Profesor X</Text>
-                </Col>  
-            </Row>
+            
             </>
         );
     }

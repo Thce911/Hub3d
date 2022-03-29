@@ -4,7 +4,8 @@ import {render} from 'react-dom';
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
+  HashRouter
 } from "react-router-dom";
 import Home from './routes/home'
 import Gallery from './routes/gallery'
@@ -31,7 +32,7 @@ const engine = new Styletron();
 const rootElement = document.getElementById("root");
 
 render(
-  <BrowserRouter>
+  <HashRouter>
       <StyletronProvider value={engine} debug={debug} debugAfterHydration>
         <StyleReset></StyleReset>
         <Routes>
@@ -46,6 +47,6 @@ render(
           
         </Routes>
       </StyletronProvider>
-  </BrowserRouter>,
+  </HashRouter>,
   rootElement
 );

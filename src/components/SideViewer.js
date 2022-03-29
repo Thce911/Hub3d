@@ -1,10 +1,14 @@
 import React, { Component,  } from "react";
-import { SideDrawer, Button, Icon, Div } from "atomize";
+import { SideDrawer, Button, Icon, Div, Row, Col, Text } from "atomize";
 import GoogleViewer from "./GoogleViewer";
+import  "@google/model-viewer";
+
+
+
 
 const BasicSideDrawer = ({ isOpen, onClose }) => {
   return (
-    <SideDrawer isOpen={isOpen} onClose={onClose} w={{ xs: "24rem", md: "40rem" }} d="flex-wrap">
+    <SideDrawer isOpen={isOpen} onClose={onClose} w={{ xs: "27rem", md: "40rem" }} d="flex-wrap" >
       <Div d="flex" > 
         <Button
         classname="close-btn"
@@ -15,7 +19,7 @@ const BasicSideDrawer = ({ isOpen, onClose }) => {
         rounded="md"
         pos="absolute"
         right="0"
-        m={{ r: "2rem" }}
+        m={{ r: {xs:"3rem",md:"2rem",lg:"2rem"}, l:{xs:"2rem", md:"2rem", lg:"2rem"} }}
         onClick={onClose}
       >
         <Icon name="Cross" size="20px" color="danger700" />
@@ -23,7 +27,7 @@ const BasicSideDrawer = ({ isOpen, onClose }) => {
       
       </Div>
       <Div pos={{xs:"absolute", md:"absolute", lg:"relative"}} top={{xs:"0"}} right={{xs:"0"}} flexDir={{xs:"column"}} m={{t:{xs:"2rem"}, r:{xs:"2rem"}}} >
-        <GoogleViewer />
+      
       </Div>
     </SideDrawer>
   );
@@ -64,6 +68,7 @@ class SideView extends Component {
         >
           <Icon name="Eye" size="20px" color="info500" />
         </Button>
+
         <BasicSideDrawer
           isOpen={showSideDrawer}
           onClose={() => this.setState({ showSideDrawer: false })}

@@ -25,7 +25,7 @@ const Card = (props) => (
                     >
                       <Icon name='Heart' size="20px" color="danger700" id="fav"/>
                     </Button>
-                    <SideView />
+                    <SideView  />
                   </Div>
 
                   <Div m={{ l: "1rem", t: "3rem" }}>

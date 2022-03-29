@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useEffect} from "react";
 import Card from "../components/Card";
 import {getDownloadURL, ref}  from "firebase/storage";
 import { db, dbs} from '../firebase-config';
@@ -9,7 +9,9 @@ import { mapSeries } from "bluebird";
 import { trackPromise} from "react-promise-tracker";
 import { Spiner } from "./Spiner";
 
+
 function getImageUrl(id, ext){
+  
     return new Promise(async(resolve) => {
       await getDownloadURL(ref(dbs, 'img/' + id + '.' + ext)).then(url => {
         resolve(url);
@@ -17,38 +19,47 @@ function getImageUrl(id, ext){
     })
   }
 
+
 class FirebaseData extends Component {
+
     contructor(props) {
         this.setState = {
           newState: {},
         };  
       }
-       
+      
     UNSAFE_componentWillMount(){
+
       onValue(refd(db, '/assets'), (snapshot) => {
         let newState = { assets: [], images: [] };
         this.setState(newState);
-        
         const data = snapshot.val();
-  
+        
         if (data !== null) {
           let newData = Object.entries(data);
-            
             mapSeries(newData, async (asset) => {
+
               const image = await getImageUrl(asset[0], asset[1].imgext);
+
               newState.assets.push(asset);
               newState.images.push(image);
-              return this.setState(newState);;
+
+              return this.setState(newState);
+
             }).then(() => {
-              console.log(newState);
-              console.log('carga completa de asset');
+
+              console.log('carga completa de assets');
+
             });
           }
+
         });
           
       }
    
     render(){
+
+      
       return(
           <>       
             {this.state.assets.map((asset, index) => (

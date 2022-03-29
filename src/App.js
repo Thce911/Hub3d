@@ -1,5 +1,5 @@
 import "./css/App.css";
-import { Div, Text, Row, Col, Container } from "atomize";
+import { Div, Row,} from "atomize";
 
 
 import Nav from "./components/Navbar";

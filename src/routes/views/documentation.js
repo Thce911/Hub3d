@@ -1,8 +1,8 @@
-import react, {Component} from "react";
-import {Div, Text, Link, Tag, Icon, Row, Col, Button, Anchor} from 'atomize';
+import {Component} from "react";
+import {Div, Text, Icon, Row, Col, Button, Anchor} from 'atomize';
 import Footer from "../../components/Footer";
 import Nav from "../../components/Navbar";
-import { BsBadgeVr, BsBadgeAr, } from "react-icons/bs";
+import { BsBadgeAr, } from "react-icons/bs";
 import { FaMobileAlt, FaTabletAlt, FaLaptop, FaNode, FaNpm, FaReact, FaExternalLinkAlt } from "react-icons/fa";
 import {DiFirebase} from "react-icons/di"
 import "../../css/documentation.css"
@@ -63,7 +63,7 @@ class Documentation extends Component{
                                     <Text textSize="subheader" w="100%" m={{t:"1rem"}} tag="h1" textAlign="justify">Atomize <Anchor><FaExternalLinkAlt /></Anchor></Text>
                                     <Text textSize="caption" textColor="gray900" m={{b:"1rem"}} >Librería de estilos y componentes </Text>
                                     <Text textSize="paragraph" w="100%" m={{t:"1rem", b:"2rem"}} textAlign="justify">Muchos proyectos web utiliza sistemas de diseño que faciliten el manejo de componentes y recursos visuales, para este proyecto se eligió Atomize, la cual es una librería muy práctica para el manejo responsivo que se buscaba del HUB para funcionar en todos los dispositivos posibles, así también facilitar la navegación para los ususarios dentro del HUB.<br></br> Para enriquecer la experiencia de la paltaforma, se utilizan los siguientes <FaNpm size={25} /> <b>React-icons</b> y <b>Swiper</b></Text>
-                                    <Text textSize="paragraph" w="100%" m={{t:"1rem", b:"2rem"}} textAlign="justify">React-Icon</Text>
+                                    <Text textSize="Disp" w="100%" m={{t:"1rem", b:"2rem"}} textAlign="justify">React-Icon</Text>
 
                                 </Div>
                             </Div>

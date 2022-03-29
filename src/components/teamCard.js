@@ -1,4 +1,4 @@
-import {SideDrawer, Div, Text, Button, Icon, Image, Anchor, Tag, Row, Col} from 'atomize';
+import { Div, Text, Image} from 'atomize';
 
 
 
@@ -10,7 +10,7 @@ const TeamCard = (props) =>(
             <Text  textSize="title" textWeight="600">
                 {props.name}
             </Text>
-            <Text textSize="caption" textColor="gray900" textWeight="500">
+            <Text textSize="caption"  textColor="gray800" textWeight="600">
                 {props.role}
             </Text>
         </Div>

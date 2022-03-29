@@ -1,14 +1,14 @@
-import react, {Component} from "react";
-import {Div, Text, Link, Tag, Icon, Row, Col, Button, Anchor} from 'atomize';
+import  {Component} from "react";
+import {Div, Text, Icon, Row, Col, Button, Anchor} from 'atomize';
 import Footer from "../../components/Footer";
 import Nav from "../../components/Navbar";
 import * as THREE from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
 import '../../css/about.css'
 
 
-let scene, camera, renderer, controls, mixer, action;
+let scene, camera, renderer,  mixer, action;
 let toggle = false;
 
 const clock = new THREE.Clock();
