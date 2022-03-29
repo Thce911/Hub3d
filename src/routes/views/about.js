@@ -107,7 +107,7 @@ class About extends Component{
         return(
               <>
               <Nav />
-                <Row  id="about-viewer" >
+                <Row  id="about-viewer" m={{b:{xs:"6rem", md:"4rem", lg:"2rem" }}}>
                    <Col size={{xs:"12", md:"6", lg:"6" }} >
                      <Div id="Render" h="100%" >
                      </Div>

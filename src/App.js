@@ -13,7 +13,7 @@ function App() {
     <>
       <Nav />
         <Row>
-          <Div w="100%" h="540px">
+          <Div w="100%" h="450px">
             <Carousel />
           </Div>
         </Row>

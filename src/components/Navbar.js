@@ -61,11 +61,22 @@ class Nav extends Component{
                         
                             <Collapse isOpen={showCollapse} >
                                 <Div d={{xs:"flex-wrap", md:"flex", lg:"flex"}} className="navlist">
-                                    <Text  m={{t:"3rem", r:"1rem"}} textSize="display" tag="h1" p={{l:{xs:"2rem"},}} >Acerca</Text>
-                                    <Link to="/library">  <Text  m={{t:"3rem", r:"1rem"}} textSize="display" tag="h1" p={{l:{xs:"2rem"},}} className="nav-item">Librería</Text></Link>
-                                    <Text  m={{t:"3rem", r:"1rem"}} textSize="display" tag="h1" p={{l:{xs:"2rem"},}} >Proyectos</Text>
-                                    <Text  m={{t:"3rem", r:"1rem"}} textSize="display" tag="h1" p={{l:{xs:"2rem"},}} >Equipo</Text>
-                                    <Text  m={{t:"3rem", r:"1rem"}} textSize="display" tag="h1" p={{l:{xs:"2rem"},b:{xs:"4rem"}}} >Soporte</Text>
+                                <Link className="navLinks"  to="/about" >
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},}} >Acerca</Text>
+                                </Link>                
+                                <Link className="navLinks"  to="/library">
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"2rem"},}} className="nav-item">Librería</Text>
+                                </Link>
+                                <Link className="navLinks"  to="/Projects">
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},}} >Proyectos</Text>
+                                    </Link>
+                                <Link className="navLinks"  to="/Team">
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},}} >Equipo</Text>
+                                </Link>
+                                <Link className="navLinks"  to="/Documentation">
+                                    <Text textWeight="500"  m={{t:"3rem", r:"1rem"}} textSize="link"  p={{l:{xs:"1rem"},b:{xs:"4rem"}}} >Documentación</Text>
+
+                                </Link>
                                 </Div>
                              </Collapse>
                     </Col>

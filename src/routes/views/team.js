@@ -13,15 +13,14 @@ class Team extends Component{
         return(
               <>
               <Nav />
-                <Row d="flex-wrap" m="2rem" bg="gray200" h="100vh" p="2rem">
+                <Row d="flex-wrap" m={{b:".5rem"}} bg="gray200" h="100%" p="1rem">
                     <Div rounded="lg" bg="white"  align="center" justify="center" p="2rem">
                         <Text textSize="title" tag="h1"> Nuestro equipo</Text>
                         <Text>Artistas digitales, diseñadores y programadores</Text>
                     </Div>
                    
-                    <Row justify="center" p={{b:"4rem"}}>
+                    <Div justify="center" p={{b:"4rem"}} m={{b:"1rem"}} d="flex" flexDir="Row" flexWrap="wrap">
                         {workers.map((worker, index) =>(
-
                             <>
                               <TeamCard 
                                   index={index}
@@ -29,10 +28,9 @@ class Team extends Component{
                                   role={worker.role}
                                   profile={worker.profile}
                                   />
-                                  
                             </>
                         ))}
-                    </Row>
+                    </Div>
                    
                 </Row>
               <Footer />
