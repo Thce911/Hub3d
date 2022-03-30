@@ -17,6 +17,12 @@
     color: #DCDADA;
 }
 
+.subtitle{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
 
 @media(max-width: 500px) {
     body{

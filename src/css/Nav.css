@@ -7,11 +7,11 @@
 }
 
 .navLinks{
-    text-decoration: aqua;
     color: gray;
     font-weight: bold;
-    
+    margin: 1rem;
 }
+
 
 
 @media (max-width: 900px){

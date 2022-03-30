@@ -20,7 +20,7 @@ class Projects extends Component{
               <>
               <Nav />
                 <Row justify="left" bg="gray200" h="100%"  p="1rem">
-                    <Div rounded="lg" bg="white" w="100%" m={{x:{xs:".2rem", md:"2rem", lg:"8rem"}}} >
+                    <Div rounded="lg" bg="white" w="100%" m={{x:{xs:"1rem", md:"1rem", lg:"1rem"}}} >
                        <Row >
                         <Col size={{xs:"12", md:"4", lg:"4" }} textAlign={{xs:"center", md:"left", lg:"left"}}>
                                 <Div m={{l:{xs:"2rem",md:"12rem",lg:"3%"}, y:"2rem"}} justify={{xs:"center", md:"left", lg:"left"}}>
@@ -29,16 +29,16 @@ class Projects extends Component{
                                 </Div >
                             </Col>
                             <Col justify="right" d={{xs:"flex-wrap", md:"flex", lg:"flex"}} size={{xs:"12", md:"8", lg:"8" }} align="center">
-                                    <Col justify="center" textAlign="center" size={{xs:"12", md:"4", lg:"2"}} >
-                                    <Anchor textColor="dark"> <FaMobileAlt size={"1.8rem"}  id="phone" style={{padding:".3rem"}} /></Anchor>
-                                    <Anchor textColor="dark"><FaTabletAlt size={"1.8rem"} id="tablet"  style={{padding:".3rem"}}/></Anchor>
-                                    <Anchor textColor="dark"><FaLaptop size={"1.8rem"}  id="laptop" style={{padding:".3rem"}} /></Anchor>
+                                    <Col justify="center" textAlign="center" size={{xs:"12", md:"4", lg:"3"}} >
+                                    <Anchor textColor="dark"> <FaMobileAlt size={"1.5rem"}  id="phone" style={{padding:".3rem"}} /></Anchor>
+                                    <Anchor textColor="dark"><FaTabletAlt size={"1.5rem"} id="tablet"  style={{padding:".3rem"}}/></Anchor>
+                                    <Anchor textColor="dark"><FaLaptop size={"1.5rem"}  id="laptop" style={{padding:".3rem"}} /></Anchor>
                                     </Col>
-                                    <Col justify="center" textAlign="center" size={{xs:"12", md:"4", lg:"2"}} align="center">
+                                    <Col justify="center" textAlign="center" size={{xs:"12", md:"4", lg:"3"}} align="center">
                                         <Anchor textColor="dark"><BsBadgeVr size={"2.5rem"}  id="VR"  style={{padding:".3rem"}}/></Anchor>
                                         <Anchor textColor="dark"><BsBadgeAr size={"2.5rem"}  id="AR" style={{padding:".3rem"}} /></Anchor>
                                     </Col>
-                                    <Col justify="center" textAlign="center" size={{xs:"12", md:"4", lg:"2"}} align="center">
+                                    <Col justify="center" textAlign="center" size={{xs:"12", md:"4", lg:"3"}} align="center">
                                         <Anchor textColor="dark"><GrAndroid size={"1.8rem"} style={{padding:".3rem"}} /></Anchor>
                                         <Anchor textColor="dark"><GrApple size={"1.8rem"} style={{padding:".3rem"}} /></Anchor>
                                         <Anchor textColor="dark"><GrWindows size={"1.8rem"} style={{padding:".3rem"}} /></Anchor>
@@ -47,7 +47,7 @@ class Projects extends Component{
                        </Row>
                     </Div>
                     </Row>
-                   <Row d="flex" flexWrap="wrap" justify="center" m={{b:"6rem"}} bg="gray200">   
+                   <Row d="flex" flexWrap="wrap" justify="center" m={{b:"6rem"}} bg="gray200" >   
                     {assets.map((asset, index)=>(
                                 <ProjectCard
                                 index={asset.id}

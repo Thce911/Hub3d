@@ -1,11 +1,11 @@
 import  {Component} from "react";
-import {Div, Text, Icon, Row, Col, Button, Anchor} from 'atomize';
+import {Div, Text, Row, Col, Button, Anchor} from 'atomize';
 import Footer from "../../components/Footer";
 import Nav from "../../components/Navbar";
 import * as THREE from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
-
 import '../../css/about.css'
+import { BsBadgeVr} from "react-icons/bs"; 
 
 
 let scene, camera, renderer,  mixer, action;
@@ -107,20 +107,19 @@ class About extends Component{
         return(
               <>
               <Nav />
-                <Row  id="about-viewer" m={{b:{xs:"6rem", md:"4rem", lg:"2rem" }}}>
-                   <Col size={{xs:"12", md:"6", lg:"6" }} >
-                     <Div id="Render" h="100%" >
+                <Row  id="about-viewer" m={{b:{xs:"12rem", md:"4rem", lg:"2rem" }}} >
+                   <Col size={{xs:"12", md:"6", lg:"6" }} id="Render">
+                     <Div   >
                      </Div>
                   </Col>  
-                  <Col size={{xs:"12", md:"6", lg:"5" }}  maxH="400px">
-                        <Div m={{ t:"1rem", l:{lg:"6rem"}}} p={{l:"2rem"}} rounded="xl" bg="white" >
+                  <Col size={{xs:"12", md:"6", lg:"6"}}  maxH="400px" >
+                        <Div m={{ t:"1rem", l:{lg:"8rem"}}} p={{l:"2rem"}} rounded="xl" bg="white" >
                             <Text textSize="display1" tag="h1" m={{t:"4rem"}} >MIRV</Text>
-                            <Text textSize="subheader" textColor="gray900"tag="h2" m={{b:"1rem"}} >Multimedia Interactiva y Realidad Virtual</Text>
-                            <Text textSize="paragraph" w="90%" m={{t:"1rem"}} textAlign="justify">Es un equipo de creativos digitales, dentro de la Vicerrectoría Académica, como patrte del aréa de inmnovación educativa, en el Tec de Monterrey, entre los que se encuentran Artistas digitales, Diseñadores y Desarrolladoress, que proponen, diseñan y desarrollan soluciones, experiencias y aplicaciones digitales educativas, para la comunidad Académica, porponemos soluciones basados en los temas que puedan aprovechar al máximo estas tecnologías, siempre buscamos desarrollar sobre las tecnologías de vanguardía.</Text>
+                            <Text textSize="label" textColor="gray900" textWeight="600" m={{b:"1rem"}} >Multimedia Interactiva y Realidad Virtual</Text>
+                            <Text textSize="paragraph" w="90%" m={{t:"1rem"}} textAlign="justify">Es un equipo de creativos digitales, dentro de la Vicerrectoría Académica, como patrte del aréa de inmnovación educativa, en el Tec de Monterrey. <br></br>Artistas digitales, Diseñadores y Desarrolladoress, que proponen, diseñan y desarrollan soluciones, experiencias digitales educativas, para la comunidad académica, proponemos soluciones sobre las tecnologías de vanguardía en educación.</Text>
                             
                             <Div d={{xs:"flex-wrap", md:"flex", g:"flex"}} m={{t:{xs:"1rem", md:"2rem", lg:"1rem"}}} >
-                                <Button bg="transparent" borderColor="black" hoverShadow="4"  m={{r:".5rem", b:"1rem"}} border="3px solid" textColor="black" suffix={<Icon size="20px" name="LongRight"></Icon>}>Solicitar un recurso</Button>
-                                <Anchor href="https://mirv.tec.mx/"><Button bg="transparent" borderColor="black" hoverShadow="4"  m={{r:".5rem", b:"1rem"}} border="3px solid" textColor="black" suffix={<Icon size="20px" name="LongRight"></Icon>}>Recursos en VR</Button></Anchor>
+                                <Anchor href="https://mirv.tec.mx/"><Button bg="transparent" borderColor="black" hoverShadow="4"  m={{r:"1rem", b:"1rem"}} border="3px solid" textColor="black" suffix={<BsBadgeVr size={25} style={{margin:".5rem"}}/>}>Recursos en </Button></Anchor>
                             </Div>
                             <Text textSize="tiny" w="90%" m={{t:"1rem"}} textAlign="justify"><i>**Ejemplo creado a partir de <a href="https://threejs.org/"> THREEJS</a> & <a href="https://www.mixamo.com/">Mixamo</a></i></Text>
                             

@@ -1,6 +1,6 @@
 import { Div, Text, Button, Image, Anchor, Tag, Row, Col} from 'atomize';
 import { FaMobileAlt, FaTabletAlt, FaLaptop, FaUserFriends, FaGithub, FaExternalLinkAlt} from "react-icons/fa";
-import { BsBadgeVr, BsBadgeAr, } from "react-icons/bs";
+import { BsBadgeVr, BsBadgeAr, } from "react-icons/bs"; 
 import {GrAndroid, GrApple, GrWindows } from "react-icons/gr";
 import "../css/documentation.css"
  
@@ -8,13 +8,13 @@ const ProjectCard = (props) => (
 <>
     <Div
         hoverShadow="4"
-        p={"1rem"}
+        p={"1.5rem"}
         rounded="xl"
         bg="white"
-        m={{ x:"1.8rem", y:"1.8rem" }}
+        m={{ x:"1rem", y:"1rem" }}
         d="flex-wrap"
-        w={{ xs: "100%", md: "500px", lg: "500px" }}
-        h={{ xs: "12%", md: "500px", lg: "700px" }}
+        w={{ xs: "100%", md: "500px", lg: "420px" }}
+        h={{ xs: "12%", md: "500px", lg: "650px" }}
         id="ProjectCard"
         >
         
@@ -38,7 +38,7 @@ const ProjectCard = (props) => (
           
         </Div>
         <Text
-            textSize="heading"
+            textSize="title"
             
             m={{ t: ".2rem" }}
             w={{ xs: "50%", md: "100%", lg: "100%" }}
@@ -47,8 +47,9 @@ const ProjectCard = (props) => (
         </Text>
         
         <Text
-            textSize="paragraph"
+            textSize="caption"
             textColor="gray900"
+            className="subtitle"
             m={{ b: "1rem" }}
             w={{ xs: "90%", md: "100%", lg: "100%" }}
         >
@@ -56,7 +57,7 @@ const ProjectCard = (props) => (
         </Text>
         <Div
             d={{ xs: "flex", md: "flex", lg: "flex" }}
-            justify="left"
+            justify="center"
             p={{ y: { xs: "2rem", md: "2rem", lg: ".2rem" } }}
         >
             <Anchor href="#">
@@ -90,7 +91,7 @@ const ProjectCard = (props) => (
                 }}
                 prefix={<FaGithub size={18} style={{ padding: ".2rem" }} />}
             >
-                GitHub
+                Repositorio
             </Button>
             </Anchor>
             <Anchor href={props.link}>
