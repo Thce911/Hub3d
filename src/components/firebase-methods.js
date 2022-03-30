@@ -6,27 +6,43 @@ import { onValue}  from "firebase/database";
 import {ref as refd} from "firebase/database"; 
 import { mapSeries } from "bluebird";
 
-import { trackPromise} from "react-promise-tracker";
+import { trackPromise, usePromiseTracker} from "react-promise-tracker";
 import { Spiner } from "./Spiner";
+import { Div } from "atomize";
 
 
 function getImageUrl(id, ext){
-  
     return new Promise(async(resolve) => {
       await getDownloadURL(ref(dbs, 'img/' + id + '.' + ext)).then(url => {
         resolve(url);
+        
       });
     })
+    
   }
+
+const LoadingSpinner =(props) =>{
+  const {promiseInprogress} = usePromiseTracker();
+  return(
+    <Div>
+      {
+        (promiseInprogress === true) ?
+        <Spiner />: null
+      }
+    </Div>
+  )
+};
 
 
 class FirebaseData extends Component {
 
     contructor(props) {
+
         this.setState = {
           newState: {},
         };  
       }
+      
       
     UNSAFE_componentWillMount(){
 
@@ -37,7 +53,8 @@ class FirebaseData extends Component {
         
         if (data !== null) {
           let newData = Object.entries(data);
-            mapSeries(newData, async (asset) => {
+            
+          mapSeries(newData, async (asset) => {
 
               const image = await getImageUrl(asset[0], asset[1].imgext);
 
@@ -45,31 +62,35 @@ class FirebaseData extends Component {
               newState.images.push(image);
 
               return this.setState(newState);
-
             }).then(() => {
-
-              console.log('carga completa de assets');
-
-            });
+              console.log('carga completa de asset');
+            }).catch(function (err){
+              console.log("Algo salió mal")
+            })
           }
 
         });
           
+      }
+
+      componentWillUnmount(){
+
       }
    
     render(){
 
       
       return(
-          <>       
-            {this.state.assets.map((asset, index) => (
+          <>  
+            {this.state ? this.state.assets.map((asset, index) => (
                 <Card
                   key={asset[1].id}
                   name={asset[1].name}
                   author={asset[1].createdby}
                   img={this.state.images[index]}
               />
-              ))}
+              )):null
+              } 
           </>
       )
     }
