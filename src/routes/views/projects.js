@@ -1,12 +1,12 @@
-import react, {Component} from "react";
-import {Div, Text, Link, Tag, Icon, Row, Col, Button, Image, Anchor} from 'atomize';
+import  {Component} from "react";
+import {Div, Text,  Row, Col, Anchor} from 'atomize';
 import Footer from "../../components/Footer";
 import Nav from "../../components/Navbar";
 import "../../css/documentation.css"
 import ProjectCard from "../../components/PojectCard";
-import { FaMobileAlt, FaTabletAlt, FaLaptop,FaUserAlt, FaUserFriends, FaGithub, FaExternalLinkAlt, FaVrCardboard} from "react-icons/fa";
+import { FaMobileAlt, FaTabletAlt, FaLaptop} from "react-icons/fa";
 import { BsBadgeVr, BsBadgeAr, } from "react-icons/bs";
-import {GrAndroid, GrApple, GrChrome, GrFirefox, GrWindows } from "react-icons/gr";
+import {GrAndroid, GrApple, GrWindows } from "react-icons/gr";
 import assets from "../../assets.json";
 
 class Projects extends Component{
@@ -20,7 +20,7 @@ class Projects extends Component{
               <>
               <Nav />
                 <Row justify="left" bg="gray200" h="100%"  p="1rem">
-                    <Div rounded="lg" bg="white" w="100%" m={{x:{xs:"1rem", md:"1rem", lg:"1rem"}}} >
+                    <Div rounded="lg" bg="white" w="100%" m={{x:{xs:"1rem", md:"1rem", lg:"3rem"}}} >
                        <Row >
                         <Col size={{xs:"12", md:"4", lg:"4" }} textAlign={{xs:"center", md:"left", lg:"left"}}>
                                 <Div m={{l:{xs:"2rem",md:"12rem",lg:"3%"}, y:"2rem"}} justify={{xs:"center", md:"left", lg:"left"}}>
@@ -64,7 +64,7 @@ class Projects extends Component{
                                 laptop={asset.laptop}
                                 VR={asset.VR}
                                 AR={asset.AR}
-                                Andorid={asset.Android}
+                                Android={asset.Android}
                                 IOS={asset.IOS}
                                 windows={asset.Windows}
                                 />

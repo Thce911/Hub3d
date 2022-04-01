@@ -35,12 +35,12 @@ class GoogleViewer extends Component {
             
              <Row >
                 <Col m={{xs:{l:"3rem"}}}>
-                    <model-viewer ar ar-scale="fixed" camera-controls auto-rotate alt="modelos 3D" id="reveal" loading="eager"  src={this.props.url}  ios-src="./models/MBA.usdz" />
+                    <model-viewer ar ar-scale="fixed" camera-controls auto-rotate alt="modelos 3D" id="reveal" loading="eager"  src="./models/coca.glb"  ios-src="./models/MBA.usdz" />
                 </Col>
             </Row>
             <Row textAlign={{xs:"center", md:"left", lg:"left"}} justify={{xs:"center", md:"left", lg:"left"}} >
               <Col size={{xs:"12", md:"8", lg:"8"}}>
-                  <Text textSize={{xs:"display1", md:"display", lg:"display1"}} >Título del objeto</Text>
+                  <Text textSize={{xs:"display1", md:"display", lg:"display1"}} >{this.props.title}</Text>
                   <Tag m={{t:"1rem", r: "1rem", b:"1rem"}}>Sin animación</Tag>
               </Col>
               <Col size={{xs:"6", md:"4", lg:"4"}} m={{xs:{b:"2rem"}}}>

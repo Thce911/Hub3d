@@ -13,8 +13,8 @@ class Team extends Component{
         return(
               <>
               <Nav />
-                <Row d="flex-wrap" m={{b:".5rem"}} bg="gray200" h="100%" p="1rem">
-                    <Div rounded="lg" bg="white"  align="center" justify="center" p={{x:"1rem", y:"2rem"}} m={{x:{xs:"2rem",lg:"3rem"}}} >
+                <Row d="flex-wrap" m={{b:".5rem"}} bg="gray200" h="100%" p="3rem">
+                    <Div rounded="lg" bg="white"  align="center" justify="center" p={{x:"2rem", y:"2rem"}} m={{x:{xs:"2rem",lg:"1rem"}}} >
                         <Text textSize="title" tag="h1"> Nuestro equipo</Text>
                         <Text textSize="caption" textColor="gray900">Artistas digitales, Diseñadores y Programadores<br></br>Los personajes fueron creados dentro de <Anchor textColor="black600" textWeight="700">Ready player Me</Anchor> </Text>
                     </Div>

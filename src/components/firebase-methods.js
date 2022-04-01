@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from "react";
+import React, {Component} from "react";
 import Card from "../components/Card";
 import {getDownloadURL, ref}  from "firebase/storage";
 import { db, dbs} from '../firebase-config';
@@ -6,7 +6,7 @@ import { onValue}  from "firebase/database";
 import {ref as refd} from "firebase/database"; 
 import { mapSeries } from "bluebird";
 
-import { trackPromise, usePromiseTracker} from "react-promise-tracker";
+import { usePromiseTracker} from "react-promise-tracker";
 import { Spiner } from "./Spiner";
 import { Div } from "atomize";
 
@@ -21,17 +21,6 @@ function getImageUrl(id, ext){
     
   }
 
-const LoadingSpinner =(props) =>{
-  const {promiseInprogress} = usePromiseTracker();
-  return(
-    <Div>
-      {
-        (promiseInprogress === true) ?
-        <Spiner />: null
-      }
-    </Div>
-  )
-};
 
 
 class FirebaseData extends Component {
@@ -47,7 +36,7 @@ class FirebaseData extends Component {
     UNSAFE_componentWillMount(){
 
       onValue(refd(db, '/assets'), (snapshot) => {
-        let newState = { assets: [], images: [] };
+        let newState = { assets: [], images: []};
         this.setState(newState);
         const data = snapshot.val();
         
@@ -58,8 +47,10 @@ class FirebaseData extends Component {
 
               const image = await getImageUrl(asset[0], asset[1].imgext);
 
+
               newState.assets.push(asset);
               newState.images.push(image);
+              
 
               return this.setState(newState);
             }).then(() => {
