@@ -3,6 +3,7 @@ import {Text, Row, Col, Icon, Div, Button, Collapse, Image, } from 'atomize';
 import { Link } from 'react-router-dom';
 import "../css/Nav.css";
 import Logo from "../assets/logo_og.png" 
+import Login from '../routes/views/login';
 
 
 class Nav extends Component{
@@ -80,8 +81,7 @@ class Nav extends Component{
                         </Collapse>
                     </Col>
                     <Col size={{xs:"12", md:"4", lg:"4"}} bg="transparent" d="flex" justify="center">
-                        <Button  bg="transparent" textColor="black900" prefix={<Icon name="UserCircle" size="20px" color="black900" m=".2rem"/>} >Inicia Sesión</Button>
-                        <Button  bg="Transparent" textColor="black900" prefix={<Icon name="UserSolid" size="20px" color="black900" m=".2rem" />} >Registrar</Button>
+                        <Login />
                     </Col>
                     
                 </Row>
