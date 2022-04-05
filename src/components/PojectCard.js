@@ -11,9 +11,9 @@ const ProjectCard = (props) => (
         p={"1.5rem"}
         rounded="xl"
         bg="white"
-        m={{ x:"1rem", y:"1rem" }}
+        m={{ x:"1.5rem", y:"1rem" }}
         d="flex-wrap"
-        w={{ xs: "100%", md: "500px", lg: "420px" }}
+        w={{ xs: "100%", md: "500px", lg: "480px" }}
         h={{ xs: "12%", md: "500px", lg: "650px" }}
         id="ProjectCard"
         >

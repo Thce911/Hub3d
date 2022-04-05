@@ -1,9 +1,10 @@
-import {Component, useState} from 'react';
 import {Div, Text, Button, Icon} from 'atomize';
 import SideView from './SideViewer';
 
+let fav = true;
 
 const Card = (props) => (
+
               <>
                 <Div
                   w="220px"
@@ -22,8 +23,9 @@ const Card = (props) => (
                       bg="transparent"
                       hoverBg="danger400"
                       rounded="lg"
+                      onClick={()=> fav = !fav }
                     >
-                      <Icon name='Heart' size="20px" color="danger700" id="fav"/>
+                      <Icon name={fav ? "Heart" : "HeartSolid"} size="20px" color="danger700" id="fav"/>
                     </Button>
                     <SideView />
                   </Div>

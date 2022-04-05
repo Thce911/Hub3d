@@ -6,11 +6,6 @@ import { onValue}  from "firebase/database";
 import {ref as refd} from "firebase/database"; 
 import { mapSeries } from "bluebird";
 
-import { usePromiseTracker} from "react-promise-tracker";
-import { Spiner } from "./Spiner";
-import { Div } from "atomize";
-
-
 function getImageUrl(id, ext){
     return new Promise(async(resolve) => {
       await getDownloadURL(ref(dbs, 'img/' + id + '.' + ext)).then(url => {

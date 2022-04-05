@@ -1,6 +1,7 @@
 model-viewer {
+    margin: 2.5rem;
     width: 100%;
-    height: 800px;
+    height: 350px;
     z-index: 0;
 }
 
@@ -9,7 +10,7 @@ model-viewer {
 }
 
 .close-btn{
-    z-index: 2;
+    z-index: 1;
 }
 
 .footerbar{

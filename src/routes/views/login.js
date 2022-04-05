@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Div, Col, Row, Text, Input, Button, Icon, Modal, Anchor} from 'atomize';
+import {Div, Text, Input, Button, Icon, Modal, Anchor} from 'atomize';
+import { Link } from 'react-router-dom';
 
 
 const LoginModal = ({ isOpen, onClose, showPassword }) => {
@@ -54,9 +55,9 @@ const LoginModal = ({ isOpen, onClose, showPassword }) => {
        </Div>
 
         <Div d="flex" justify="center">
-          <Button onClick={onClose} bg="info700" rounded="circle">
+         <Link to="/Admin"> <Button onClick={onClose} bg="info700" rounded="circle">
             Iniciar sesión
-          </Button>
+          </Button></Link>
         </Div>
       </Modal>
     );

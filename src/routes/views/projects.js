@@ -20,10 +20,10 @@ class Projects extends Component{
               <>
               <Nav />
                 <Row justify="left" bg="gray200" h="100%"  p="1rem">
-                    <Div rounded="lg" bg="white" w="100%" m={{x:{xs:"1rem", md:"1rem", lg:"3rem"}}} >
+                    <Div rounded="lg" bg="white" w="90%" m={{x:{xs:"1rem", md:"1rem", lg:"6rem"}}} >
                        <Row >
                         <Col size={{xs:"12", md:"4", lg:"4" }} textAlign={{xs:"center", md:"left", lg:"left"}}>
-                                <Div m={{l:{xs:"2rem",md:"12rem",lg:"3%"}, y:"2rem"}} justify={{xs:"center", md:"left", lg:"left"}}>
+                                <Div m={{l:{xs:".5rem",md:"12rem",lg:"3%"}, y:"2rem"}} justify={{xs:"center", md:"left", lg:"left"}} p={{xs:"1rem", md:"1rem", lg:".5rem"}}>
                                     <Text textSize="title" tag="h1" m={{y:".5rem", l:{xs:"0rem", md:"1rem", lg:"1rem"}}}>Proyectos hechos en MIRV</Text>
                                     <Text textSize="caption" textColor="gray900"  m={{y:".5rem",l:{xs:".2rem", md:"1rem", lg:"1rem"}}}>Estos son algunos de los proyectos en los que se han utlizado los recursos de nuestra librería.</Text>
                                 </Div >

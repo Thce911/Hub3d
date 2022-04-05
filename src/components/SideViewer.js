@@ -15,38 +15,42 @@ const BasicSideDrawer = ({ isOpen, onClose }, props) => {
           bg="danger300"
           hoverBg="danger400"
           rounded="md"
-          pos="absolute"
+          pos="fixed"
           right="0"
           m={{ r: {xs:"3rem",md:"2rem",lg:"2rem"}, l:{xs:"2rem", md:"2rem", lg:"2rem"} }}
           onClick={onClose}
         >
           <Icon name="Cross" size="20px" color="danger700" />
         </Button>
-        
         </Div>
-        <model-viewer ar ar-scale="fixed" camera-controls auto-rotate alt="modelos 3D" id="reveal" loading="eager"  src="./models/coca.glb"  ios-src="./models/MBA.usdz" />
       </Row>
-
       <Row>
-      <Col size={{xs:"12", md:"8", lg:"8"}}>
-                  <Text textSize={{xs:"display1", md:"display", lg:"display1"}} >{props.title}</Text>
-                  <Tag m={{t:"1rem", r: "1rem", b:"1rem"}}>Sin animación</Tag>
-              </Col>
+      <model-viewer ar ar-scale="fixed" camera-controls auto-rotate alt="modelos 3D" id="reveal" loading="eager"  src="./models/coca.glb"  ios-src="./models/MBA.usdz" />
       </Row>
-      
       <Row>
-        <Col size="4" bg="gray200">
-            <Text>Nombre</Text>
-            <Text>Author</Text>
-            <Text>Tipo</Text>
-            <Text>Solicitante</Text>
-        </Col>
-        <Col size="8">
-            <Text>p008_Dioxido_de_Carbono</Text>
-            <Text>Diego</Text>
-            <Text>AssetBundle</Text>
-            <Text>Profesor X</Text>
-        </Col>  
+        <Div m="2rem">
+          <Text textSize="title">Nombre del Objeto</Text>
+          <Text textSize="subheader">Nombre del autor</Text>
+        </Div>
+      </Row>
+        <Text m={{l:"2rem"}} textSize="subheader">Información sobre el recurso</Text>
+      <Row>
+        <Div m="2rem" d="flex" rounded="xl">
+          <Col size="6" bg="gray200" >
+              <Text m=".5rem" textWeight="600">Nombre</Text>
+              <Text m=".5rem" textWeight="600">Author</Text>
+              <Text m=".5rem" textWeight="600">Tipo</Text>
+              <Text m=".5rem" textWeight="600">Solicitante</Text>
+              <Text m=".5rem" textWeight="600">Materias</Text>
+          </Col>
+          <Col size="6" >
+              <Text   m=".5rem" textSize="caption">p008_Dioxido_de_Carbono</Text>
+              <Text   m=".5rem" textSize="caption">Diego</Text>
+              <Text   m=".5rem" textSize="caption">AssetBundle</Text>
+              <Text   m=".5rem" textSize="caption">Profesor X</Text>
+              <Text   m=".5rem" textSize="caption">Materia001, Materia002, Materia003</Text>
+          </Col>  
+        </Div>
       </Row>
 
     </SideDrawer>
